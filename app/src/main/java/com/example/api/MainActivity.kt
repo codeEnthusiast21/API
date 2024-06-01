@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var myAdapter : MyAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var recyclerview = findViewById<RecyclerView>(R.id.recycler_View)
+        setContentView(R.layout.activity_main)
+         recyclerview = findViewById(R.id.recycler_View)
 
         val retrofitBuilder= Retrofit.Builder()
             .baseUrl("https://dummyjson.com/")
@@ -51,3 +52,48 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+//
+//import android.os.Bundle
+//import androidx.appcompat.app.AppCompatActivity
+//import androidx.recyclerview.widget.LinearLayoutManager
+//import androidx.recyclerview.widget.RecyclerView
+//import retrofit2.Call
+//import retrofit2.Callback
+//import retrofit2.Response
+//import retrofit2.Retrofit
+//import retrofit2.converter.gson.GsonConverterFactory
+//import com.example.api.databinding.ActivityMainBinding
+//
+//class MainActivity : AppCompatActivity() {
+//    lateinit var recyclerview: RecyclerView
+//    lateinit var myAdapter: MyAdapter
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_main) // Ensure this matches your XML file name
+//
+//        recyclerview = findViewById(R.id.recycler_View)
+//
+//        val retrofitBuilder = Retrofit.Builder()
+//            .baseUrl("https://dummyjson.com/")
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+//            .create(ApiInterface::class.java)
+//
+//        val retrofitdata = retrofitBuilder.getProductDetails()
+//        retrofitdata.enqueue(object : Callback<mydata?> {
+//            override fun onResponse(p0: Call<mydata?>, p1: Response<mydata?>) {
+//                val responsebody = p1.body()
+//                val productlist = responsebody?.products ?: return
+//                myAdapter = MyAdapter(this@MainActivity, productlist)
+//                recyclerview.adapter = myAdapter
+//                recyclerview.layoutManager = LinearLayoutManager(this@MainActivity)
+//            }
+//
+//            override fun onFailure(p0: Call<mydata?>, p1: Throwable) {
+//                // Handle failure
+//            }
+//        })
+//    }
+//}
