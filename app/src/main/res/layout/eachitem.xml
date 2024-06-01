@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    app:cardCornerRadius="25dp"
+    android:layout_margin="8dp"
+    android:elevation="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="100dp"
+            android:id="@+id/prodcutimage"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:layout_height="100dp"
+            android:src="@drawable/satp"
+            android:scaleType="centerCrop"/>
+            <TextView
+                android:id="@+id/prdctname"
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:text="Product Name"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/description"
+            android:textSize="16sp"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="distribution of letters, as opposed to using 'Content here, content here', making it look like readable English"
+            android:fontFamily="monospace"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
